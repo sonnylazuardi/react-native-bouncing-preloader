@@ -2,6 +2,8 @@
 
 Bouncing Preloader Component with custom icons in React Native
 
+![icon](example/assets/icon.png)
+
 ![demo](bouncingpreloader.gif)
 
 Based on the dribbble shot by [Dany Rizky](https://dribbble.com/danyrizkyw):
