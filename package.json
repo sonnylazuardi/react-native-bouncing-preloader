@@ -1,0 +1,22 @@
+{
+  "name": "react-native-bouncing-preloader",
+  "version": "1.0.0",
+  "description": "bouncing preloader component with custom icons in React Native",
+  "main": "index.js",
+  "dependencies": {
+    "prop-types": "^15.6.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "bouncing",
+    "preloader",
+    "react",
+    "native",
+    "dribbble"
+  ],
+  "author": "sonnylazuardi",
+  "license": "MIT"
+}
