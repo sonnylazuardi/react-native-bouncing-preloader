@@ -1,3 +1,4 @@
+[![reactnative.gallery](https://img.shields.io/badge/reactnative.gallery-%F0%9F%8E%AC-green.svg)](https://reactnative.gallery)
 # React Native Bouncing Preloader
 
 Bouncing Preloader Component with custom icons in React Native
