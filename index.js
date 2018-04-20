@@ -10,6 +10,25 @@ import {
 } from "react-native";
 
 export default class BouncingPreloader extends Component {
+  static propTypes = {
+    icons: PropTypes.array,
+    leftRotation: PropTypes.string,
+    rightRotation: PropTypes.string,
+    leftDistance: PropTypes.number,
+    rightDistance: PropTypes.number,
+    speed: PropTypes.number
+  };
+  static defaultProps = {
+    icons: [
+      "https://www.shareicon.net/data/256x256/2016/05/04/759946_bar_512x512.png",
+      "https://www.shareicon.net/data/256x256/2016/05/04/759908_food_512x512.png"
+    ],
+    leftRotation: "-680deg",
+    rightRotation: "360deg",
+    leftDistance: -180,
+    rightDistance: -250,
+    speed: 1200
+  };
   state = {
     spinValue: new Animated.Value(0),
     yValue: new Animated.Value(0),
@@ -33,7 +52,7 @@ export default class BouncingPreloader extends Component {
         currentIndex: nextIndex >= icons.length / 2 ? 0 : nextIndex
       },
       () => {
-        this.startAnimation(() => this.changeIndex());
+        this.startAnimation(this.changeIndex);
       }
     );
   }
@@ -122,26 +141,6 @@ export default class BouncingPreloader extends Component {
     );
   }
 }
-
-BouncingPreloader.propTypes = {
-  icons: PropTypes.array,
-  leftRotation: PropTypes.string,
-  rightRotation: PropTypes.string,
-  leftDistance: PropTypes.number,
-  rightDistance: PropTypes.number,
-  speed: PropTypes.number
-};
-BouncingPreloader.defaultProps = {
-  icons: [
-    "https://www.shareicon.net/data/256x256/2016/05/04/759946_bar_512x512.png",
-    "https://www.shareicon.net/data/256x256/2016/05/04/759908_food_512x512.png"
-  ],
-  leftRotation: "-680deg",
-  rightRotation: "360deg",
-  leftDistance: -180,
-  rightDistance: -250,
-  speed: 1200
-};
 
 const styles = StyleSheet.create({
   container: {},
