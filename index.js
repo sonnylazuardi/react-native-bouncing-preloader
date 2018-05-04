@@ -81,6 +81,7 @@ export default class BouncingPreloader extends Component {
       outputRange: [0, this.props.rightDistance]
     });
     const { iconLeft, iconRight } = this.state;
+    const { size } = this.props;
     return (
       <View style={styles.container}>
         <Animated.View
@@ -89,12 +90,16 @@ export default class BouncingPreloader extends Component {
             transform: [{ translateY: translateYRight }]
           }}
         >
-          {iconLeft ? (
+          {iconRight ? (
             <Animated.Image
-              source={iconLeft}
+              source={iconRight}
               style={[
                 styles.image,
-                { transform: [{ rotate: spinRight }, { translateY: 5 }] }
+                {
+                  transform: [{ rotate: spinRight }, { translateY: 5 }],
+                  width: size,
+                  height: size
+                }
               ]}
               resizeMode="contain"
             />
@@ -107,13 +112,17 @@ export default class BouncingPreloader extends Component {
             transform: [{ translateY: translateYLeft }]
           }}
         >
-          {iconRight ? (
+          {iconLeft ? (
             <Animated.Image
-              source={iconRight}
+              source={iconLeft}
               resizeMode="contain"
               style={[
                 styles.image,
-                { transform: [{ rotate: spinLeft }, { translateY: 5 }] }
+                {
+                  transform: [{ rotate: spinLeft }, { translateY: 5 }],
+                  width: size,
+                  height: size
+                }
               ]}
             />
           ) : null}
@@ -129,7 +138,8 @@ BouncingPreloader.propTypes = {
   rightRotation: PropTypes.string,
   leftDistance: PropTypes.number,
   rightDistance: PropTypes.number,
-  speed: PropTypes.number
+  speed: PropTypes.number,
+  size: PropTypes.number
 };
 BouncingPreloader.defaultProps = {
   icons: [
@@ -140,7 +150,8 @@ BouncingPreloader.defaultProps = {
   rightRotation: "360deg",
   leftDistance: -180,
   rightDistance: -250,
-  speed: 1200
+  speed: 1200,
+  size: 150
 };
 
 const styles = StyleSheet.create({
@@ -148,12 +159,5 @@ const styles = StyleSheet.create({
   image: {
     width: 150,
     height: 90
-  },
-  paragraph: {
-    margin: 24,
-    fontSize: 18,
-    fontWeight: "bold",
-    textAlign: "center",
-    color: "#34495e"
   }
 });
