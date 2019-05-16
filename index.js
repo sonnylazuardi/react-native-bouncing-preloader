@@ -10,6 +10,7 @@ import {
 } from "react-native";
 
 export default class BouncingPreloader extends Component {
+  _isMounted = false;
   state = {
     spinValue: new Animated.Value(0),
     yValue: new Animated.Value(0),
@@ -21,7 +22,12 @@ export default class BouncingPreloader extends Component {
     iconRight: null
   };
   componentDidMount() {
-    this.changeIndex();
+    if (this._isMounted){
+      this.changeIndex();
+    }
+  }
+  componentWillUnmount() {
+    this._isMounted = false;
   }
   changeIndex() {
     const { currentIndex, icons } = this.state;
