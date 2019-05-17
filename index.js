@@ -22,6 +22,8 @@ export default class BouncingPreloader extends Component {
     iconRight: null
   };
   componentDidMount() {
+    this._isMounted = true;
+
     if (this._isMounted){
       this.changeIndex();
     }
@@ -32,16 +34,18 @@ export default class BouncingPreloader extends Component {
   changeIndex() {
     const { currentIndex, icons } = this.state;
     const nextIndex = currentIndex + 1;
-    this.setState(
-      {
-        iconLeft: icons[currentIndex * 2],
-        iconRight: icons[currentIndex * 2 + 1],
-        currentIndex: nextIndex >= icons.length / 2 ? 0 : nextIndex
-      },
-      () => {
-        this.startAnimation(() => this.changeIndex());
-      }
-    );
+    if (this._isMounted){
+      this.setState(
+        {
+          iconLeft: icons[currentIndex * 2],
+          iconRight: icons[currentIndex * 2 + 1],
+          currentIndex: nextIndex >= icons.length / 2 ? 0 : nextIndex
+        },
+        () => {
+          this.startAnimation(() => this.changeIndex());
+        }
+      );
+    }
   }
   startAnimation(callback) {
     this.state.spinValue.setValue(0);
