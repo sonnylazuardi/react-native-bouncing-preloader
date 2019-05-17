@@ -56,12 +56,15 @@ import BouncingPreloader from 'react-native-bouncing-preloader';
 
 ### Available props
 
-* `icons`: PropTypes.array,
-* `leftRotation`: PropTypes.string,
-* `rightRotation`: PropTypes.string,
-* `leftDistance`: PropTypes.number,
-* `rightDistance`: PropTypes.number,
-* `speed`: PropTypes.number
+| Props         | Type          | Required           | Default Value |
+| ------------- | ------------- | ------------------ | ------------- |
+| icons         | Array         | :white_check_mark: | :x:           |
+| leftRotation  | String        | :x:                | -680deg       |
+| rightRotation | String        | :x:                | 360deg        |
+| leftDistance  | String        | :x:                | -180          |
+| rightDistance | Number        | :x:                | -250          |
+| speed         | Number        | :x:                | 1200          |
+| size          | Number        | :x:                | 150           |
 
 #### Contributing
 
