@@ -2,7 +2,7 @@ declare module 'react-native-bouncing-preloader' {
   import React from 'react';
 
   interface BouncingPreloaderProps {
-    icons: Array<string>;
+    icons: Array<any>;
     leftRotation?: string;
     rightRotation?: string;
     leftDistance?: number;
