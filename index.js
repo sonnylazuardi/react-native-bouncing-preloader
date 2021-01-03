@@ -53,18 +53,21 @@ export default class BouncingPreloader extends Component {
     Animated.timing(this.state.spinValue, {
       toValue: 1,
       duration: this.props.speed * 2,
-      easing: Easing.linear
+      easing: Easing.linear,
+      useNativeDriver: true
     }).start();
     Animated.timing(this.state.yValue, {
       toValue: 1,
       duration: this.props.speed / 2,
-      easing: Easing.bezier(0, 1, 1, 1)
+      easing: Easing.bezier(0, 1, 1, 1),
+      useNativeDriver: true
     }).start(() => {
       Animated.timing(this.state.yValue, {
         delay: 5,
         toValue: 0,
         duration: this.props.speed / 2,
-        easing: Easing.bezier(1, 0, 1, 1)
+        easing: Easing.bezier(1, 0, 1, 1),
+        useNativeDriver: true
       }).start(() => {
         setTimeout(() => {
           callback && callback();
