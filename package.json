@@ -1,5 +1,5 @@
 {
-  "name": "react-native-bouncing-preloader",
+  "name": "react-native-bouncing-preloaders",
   "version": "1.0.0",
   "description": "bouncing preloader component with custom icons in React Native",
   "main": "index.js",

@@ -28,21 +28,21 @@ When I saw the preloader animation, I think it would be great if we can use our 
 
 #### Usage
 
-* `npm install --save react-native-bouncing-preloader`
+* `npm install --save react-native-bouncing-preloaders`
 * In your react native script add these lines
 
 ```jsx
-import BouncingPreloader from 'react-native-bouncing-preloader';
+import BouncingPreloader from 'react-native-bouncing-preloaders';
 
 <BouncingPreloader
   icons={[
     'https://www.shareicon.net/data/256x256/2016/05/04/759946_bar_512x512.png',
     require('./assets/image.png'),
   ]}
-  leftRotation="-680deg",
-  rightRotation="360deg",
-  leftDistance={-180},
-  rightDistance={-250},
+  leftRotation="-680deg"
+  rightRotation="360deg"
+  leftDistance={-180}
+  rightDistance={-250}
   speed={1200} />
 
 // or just give icons
