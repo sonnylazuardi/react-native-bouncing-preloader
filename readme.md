@@ -14,7 +14,7 @@ https://dribbble.com/shots/4423936-Islands-Preloader-Animation
 
 #### Demo
 
-https://exp.host/@sonnylazuardi/react-native-bouncing-preloader
+https://snack.expo.io/@sonnylazuardi/testing-preloader
 
 #### Background
 
@@ -72,7 +72,7 @@ import BouncingPreloader from 'react-native-bouncing-preloaders';
 
 #### Examples
 
-[Expo Example](example)
+[Expo Example](https://snack.expo.io/@sonnylazuardi/testing-preloader)
 
 Most of the credit goes to [Dany Rizky](https://dribbble.com/danyrizkyw) for the design inspiration.
 
